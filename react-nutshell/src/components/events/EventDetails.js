@@ -44,7 +44,7 @@ class EventDetails extends Component {
           <Card.Subtitle className="mb-2 text-muted">
             {this.state.location}
           </Card.Subtitle>
-          <Card.Text>{this.state.date}</Card.Text>
+          moment().format('MMMM Do YYYY, h:mm a')
           <Button
           variant="danger"
             type="button"
