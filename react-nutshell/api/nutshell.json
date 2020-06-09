@@ -1,97 +1,107 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "name": "Sarah Brooks",
-            "username": "trisarahtops",
-            "email": "sarah@sarah.com"
-        },
-        {
-            "id": 2,
-            "name": "Austin Preece",
-            "username": "preeceasaurus",
-            "email": "austin@austin.com"
-        },
-        {
-            "id": 3,
-            "name": "Dylan Bishop",
-            "username": "bishiosauraus",
-            "email": "dylan@dylan.com"
-        }
-    ], "tasks": [
-        {
-            "id": 1,
-            "userId": 1,
-            "task": "Clean the bathroom",
-            "completed": false,
-            "deadline": "today"
-        },
-        {
-            "id": 2,
-            "userId": 3,
-            "task": "Go to the gym",
-            "completed": false,
-            "deadline": "today"
-        },
-        {
-            "id": 3,
-            "userId": 2,
-            "task": "Walk the dog",
-            "completed": false,
-            "deadline": "today"
-        }
-    ], "events": [
-        {
-            "id": 1,
-            "date": "July 2021",
-            "name": "When Fun Begins",
-            "location": "Not America",
-            "userId": 1
-        },
-        {
-            "id": 2,
-            "date": "December 2020",
-            "name": "Austin Optimism Fun",
-            "location": "Unlikely in Huntington",
-            "userId": 2
-        },
-        {
-            "id": 3,
-            "date": "February 2021",
-            "name": "Maybe Vaccine Party",
-            "location": "Mountain State Health Arena",
-            "userId": 3
-        }
-    ], "newsArticles": [
-        {
-            "id": 1,
-            "userId": 1,
-            "url": "donaldtrumplost.com",
-            "title": "IS AMERICA SAFE",
-            "synopsis": "PROBABLY NOT",
-            "timeStamp": "November 4, 2020"
-        },
-        {
-            "id": 2,
-            "userId": 2,
-            "url": "austinbelievesinamerica.com",
-            "title": "WILL THE YOUTH SAVE US",
-            "synopsis": "DOUBT IT",
-            "timeStamp": "July 1, 2020"
-        },
-        {
-            "id": 3,
-            "userId": 3,
-            "url": "chinaisthedevil.com",
-            "title": "ARE THE CHINESE VACCINES SAFE",
-            "synopsis": "OR IS THIS CHEMICAL WARFARE?",
-            "timeStamp": "December 1, 2020"
-        }
-    ], "chats":
+  "users": [
     {
-        "id":1,
-        "userId": 1,
-        "message": "accept the russians as our overlords",
-        "time": "THE FUTURE"
+      "id": 1,
+      "name": "Sarah Brooks",
+      "username": "trisarahtops",
+      "email": "sarah@sarah.com"
+    },
+    {
+      "id": 2,
+      "name": "Austin Preece",
+      "username": "preeceasaurus",
+      "email": "austin@austin.com"
+    },
+    {
+      "id": 3,
+      "name": "Dylan Bishop",
+      "username": "bishiosauraus",
+      "email": "dylan@dylan.com"
     }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": 1,
+      "task": "Clean the bathroom",
+      "dueDate": "2020-06-10T04:00:00.000Z",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "userId": 3,
+      "task": "Go to the gym",
+      "dueDate": "2020-06-09T04:00:00.000Z",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "task": "Walk the dog",
+      "dueDate": "2020-06-13T04:00:00.000Z",
+      "completed": false
+    },
+    {
+      "userId": 3,
+      "task": "asdasdas",
+      "dueDate": "2020-06-08T18:46:36.000Z",
+      "completed": false,
+      "id": 4
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "date": "July 2021",
+      "name": "When Fun Begins",
+      "location": "Not America",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "date": "December 2020",
+      "name": "Austin Optimism Fun",
+      "location": "Unlikely in Huntington",
+      "userId": 2
+    },
+    {
+      "id": 3,
+      "date": "February 2021",
+      "name": "Maybe Vaccine Party",
+      "location": "Mountain State Health Arena",
+      "userId": 3
+    }
+  ],
+  "newsArticles": [
+    {
+      "id": 1,
+      "userId": 1,
+      "url": "donaldtrumplost.com",
+      "title": "IS AMERICA SAFE",
+      "synopsis": "PROBABLY NOT",
+      "timeStamp": "November 4, 2020"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "url": "austinbelievesinamerica.com",
+      "title": "WILL THE YOUTH SAVE US",
+      "synopsis": "DOUBT IT",
+      "timeStamp": "July 1, 2020"
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "url": "chinaisthedevil.com",
+      "title": "ARE THE CHINESE VACCINES SAFE",
+      "synopsis": "OR IS THIS CHEMICAL WARFARE?",
+      "timeStamp": "December 1, 2020"
+    }
+  ],
+  "chats": {
+    "id": 1,
+    "userId": 1,
+    "message": "accept the russians as our overlords",
+    "time": "THE FUTURE"
+  }
 }
