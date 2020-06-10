@@ -34,6 +34,7 @@ class EventList extends Component {
           {this.state.events.map((currentEventInLoop) => {
             return (
               <EventCard
+              
                 key={currentEventInLoop.id}
                 eventProp={currentEventInLoop}
               />

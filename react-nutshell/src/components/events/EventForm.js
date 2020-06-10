@@ -19,7 +19,6 @@ class EventForm extends Component {
     stateToChange[evt.target.id] = evt.target.value;
     this.setState(stateToChange);
   };
-
   createNewEvent = (evt) => {
     //this stops from loading on page load
     evt.preventDefault();
@@ -39,6 +38,13 @@ class EventForm extends Component {
       );
     }
   };
+
+  handleChange = date => {
+    this.setState({
+      date: date
+    });
+  };
+ 
 
   render() {
     return (
@@ -61,12 +67,24 @@ class EventForm extends Component {
             placeholder="Location"
           />
           <Form.Label htmlFor="date">Date of Event</Form.Label>
-          <DatePicker
+          {/* <Form.Control
+          type="datetime-local"
+          required
+          onChange={this.handleFieldChange}
+          id="date"
+          placeholder="Date"
+          /> */}
+          {/* <DatePicker
             selected={this.state.date}
             onSelect={this.handleSelect} //when day is clicked
             onChange={this.handleChange}
-            showTimeSelect
-            dateFormat="Pp" //only when value has changed
+          /> */}
+          <DatePicker
+          selected={this.state.time}
+          onSelect={this.handleSelect} 
+          onChange={this.handleChange}
+          showTimeSelect
+          dateFormat="Pp"
           />
           <div className="alignRight">
             <Button

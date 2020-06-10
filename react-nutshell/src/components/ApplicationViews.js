@@ -60,6 +60,8 @@ class ApplicationViews extends Component {
           }}
         />
 
+{/* EVENTS */}
+
         <Route
           exact
           path="/tasks"

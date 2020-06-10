@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import EventManager from "../../modules/EventManager";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import Moment from "react-moment"
 
 class EventDetails extends Component {
   isEventId = () => this.state.name !== undefined;
@@ -29,12 +30,6 @@ class EventDetails extends Component {
       this.props.history.push("/events")
     );
   };
-  //   handleArchive = () => {
-  //     this.setState({ loadingStatus: true });
-  //     EventManager.archiveEvent(this.props.eventId).then(() =>
-  //       this.props.history.push("/events")
-  //     );
-  //   };
 
   render() {
     return this.isEventId() ? (
@@ -44,7 +39,9 @@ class EventDetails extends Component {
           <Card.Subtitle className="mb-2 text-muted">
             {this.state.location}
           </Card.Subtitle>
-          <Card.Text>{this.state.date}</Card.Text>
+    <Card.Text>  <Moment format="MM/DD/YYYY HH:mm">
+               {new Date(this.state.date)}
+            </Moment></Card.Text>
           <Button
             variant="danger"
             type="button"
@@ -53,14 +50,7 @@ class EventDetails extends Component {
           >
             Delete
           </Button>
-          {/* <Button
-          variant="danger"
-            type="button"
-            disabled={this.state.loadingStatus}
-            onClick={this.handleArchive}
-          >
-            Archive
-          </Button> */}
+        
           <Button
             variant="danger"
             type="button"

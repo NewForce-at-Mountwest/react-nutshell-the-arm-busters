@@ -19,31 +19,33 @@ class EventEditForm extends Component {
     this.setState(stateToChange);
   };
 
-  updateExistingEvent = (evt, date) => {
+  updateExistingEvent = (evt) => {
     evt.preventDefault();
     this.setState({ loadingStatus: true });
     const editedEvent = {
       id: this.props.match.params.eventId,
       name: this.state.name,
-      date: date,
+      date: this.state.date,
       location: this.state.location,
     };
     EventManager.updateEvent(editedEvent).then(() =>
       this.props.history.push("/events")
     );
   };
-  // handleChange = date => {
-  //   this.setState({
-  //     date: date
-  //   });
-  // };
+  handleChange = date => {
+    this.setState({
+      date: date
+    });
+  };
 
   // taco = {}
 
   componentDidMount() {
     EventManager.get(this.props.match.params.eventId).then((event) => {
+
       // this.taco.photo = book.photo
       // this.taco.available = book.available
+      console.log(event.date)
       this.setState({
         name: event.name,
         date: new Date(event.date),
