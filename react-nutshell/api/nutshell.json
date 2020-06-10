@@ -24,30 +24,45 @@
       "id": 1,
       "userId": 1,
       "task": "Clean the bathroom",
-      "completed": false,
-      "deadline": "today"
+      "dueDate": "2020-06-10T04:00:00.000Z",
+      "completed": false
     },
     {
       "id": 2,
       "userId": 3,
       "task": "Go to the gym",
-      "completed": false,
-      "deadline": "today"
+      "dueDate": "2020-06-09T04:00:00.000Z",
+      "completed": false
     },
     {
       "id": 3,
       "userId": 2,
       "task": "Walk the dog",
+      "dueDate": "2020-06-13T04:00:00.000Z",
+      "completed": false
+    },
+    {
+      "userId": 3,
+      "task": "asdasdas",
+      "dueDate": "2020-06-08T18:46:36.000Z",
       "completed": false,
-      "deadline": "today"
+      "id": 4
+    },
+    {
+      "userId": 3,
+      "task": "asdasdasdasd",
+      "dueDate": "2020-06-13T19:31:13.000Z",
+      "completed": true,
+      "id": 5
     }
   ],
   "events": [
     {
       "id": 1,
+      "date": "July 2021",
       "name": "When Fun Begins",
-      "date": "July 4, 2021",
-      "location": "Not America"
+      "location": "Not America",
+      "userId": 1
     },
     {
       "id": 2,

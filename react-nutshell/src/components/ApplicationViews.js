@@ -5,6 +5,9 @@ import EventList from './events/EventList';
 import EventForm from './events/EventForm';
 import EventDetails from './events/EventDetails';
 import EventEditForm from './events/EventEditForm'
+import TaskList from "./tasks/TaskList.js"
+import TaskForm from "./tasks/TaskForm.js"
+import TaskEditForm from "./tasks/TaskEditForm.js"
 
 class ApplicationViews extends Component {
   isAuthenticated = () => localStorage.getItem("credentials") !== null;
@@ -57,6 +60,26 @@ class ApplicationViews extends Component {
           }}
         />
 
+        <Route
+          exact
+          path="/tasks"
+          render={(props) => {
+            return <TaskList {...props}/>;
+          }}
+        />
+        <Route
+          exact
+          path="/tasks/new"
+          render={(props) => {
+            return <TaskForm {...props}/>;
+          }}
+        />
+        <Route
+          path="/tasks/:taskId(\d+)/edit"
+          render={(props) => {
+            return <TaskEditForm {...props} />
+          }}
+        />
       </React.Fragment>
     );
   }
