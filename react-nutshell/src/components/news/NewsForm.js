@@ -7,6 +7,7 @@ class NewsForm extends Component {
         synopsis: "",
         url: "",
         loadingStatus: false,
+        date: new Date(),
     };
 
     handleFieldChange = evt => {
@@ -31,7 +32,7 @@ class NewsForm extends Component {
                 synopsis: this.state.synopsis,
                 url: this.state.url,
                 userId: 1,
-                timeStamp: "July 9, 2020"
+                date: this.state.date,
             };
 
             // Create the animal and redirect user to animal list

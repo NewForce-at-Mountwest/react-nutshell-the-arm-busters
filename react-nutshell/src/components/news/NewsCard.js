@@ -20,7 +20,7 @@ class NewsCard extends Component {
           <button
             type="button"
             disabled={this.props.loadingStatus}
-            onClick={this.props.handleDelete}
+            onClick={() => this.props.deleteNewsArticle(this.props.newsProp.id)}
           >
             Delete
           </button>

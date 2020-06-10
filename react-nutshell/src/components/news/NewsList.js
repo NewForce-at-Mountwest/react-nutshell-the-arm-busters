@@ -26,6 +26,17 @@ componentDidMount(){
     })
 }
 
+deleteNewsArticle = id => {
+  NewsManager.delete(id)
+  .then(() => {
+    NewsManager.getAll()
+    .then((newNewsArticle) => {
+      this.setState({
+          newsArticles: newNewsArticle
+      })
+    })
+  })
+}
 
 handleDelete = () => {
   //invoke the delete function in AnimalManger and re-direct to the animal list.
@@ -49,7 +60,7 @@ render(){
   </section>
         <div className="container-cards">
             {/* <h1>I have a monkey named {this.monkies.name}</h1> */}
-            {this.state.newsArticles.map(newsInLoop => <NewsCard key={newsInLoop.id} newsProp={newsInLoop} />)}
+            {this.state.newsArticles.sort((a,b)=>{return new Date(b.date)- new Date(a.date) }).map(newsInLoop => <NewsCard key={newsInLoop.id} newsProp={newsInLoop} deleteNewsArticle={this.deleteNewsArticle}/>)}
         </div>
         </>
     )
