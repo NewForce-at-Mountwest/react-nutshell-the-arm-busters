@@ -20,7 +20,7 @@ class TaskForm extends Component {
   };
 
   handleDateChange = (date) => {
-    console.log(date)
+    console.log(date);
     this.setState({
       dueDate: date,
     });
@@ -28,10 +28,7 @@ class TaskForm extends Component {
 
   handleKeyUp = (evt) => {
     if (evt.keyCode == 13) {
-      if (
-        this.state.task === "" ||
-        this.state.dueDate === ""
-      ) {
+      if (this.state.task === "" || this.state.dueDate === "") {
         window.alert("Please input something in all three fields");
       } else {
         this.setState({ loadingStatus: true });
@@ -81,6 +78,7 @@ class TaskForm extends Component {
           <form>
             <fieldset>
               <div className="task-form">
+                <h3 className="task-header">Add a New Task</h3>
                 <label htmlFor="task">Task Description</label>
                 <input
                   type="text"

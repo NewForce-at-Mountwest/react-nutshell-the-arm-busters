@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 //import the components we will need
-import TaskCard from "./TaskCard";
 import CompletedTaskCard from "./CompletedTaskCard";
 import "./TaskList.css";
 import TaskManager from "../../modules/TaskManager.js";
@@ -58,11 +57,23 @@ class TaskList extends Component {
     return (numberComplete / numberTotal) * 100;
   };
 
-  averageIncomplete = () => {
-    let numberIncomplete = this.state.incompleteTasks.length;
-    let numberComplete = this.state.completeTasks.length;
-    let numberTotal = numberIncomplete + numberComplete;
-    return (numberIncomplete / numberTotal) * 100;
+  completeCheck = (sortedCompleteTasks) => {
+    if (this.state.completeTasks.length == 0) {
+      return <> You have no completed tasks </>;
+    } else {
+      return (
+        <div className="task-container-cards">
+          {sortedCompleteTasks.map((task) => (
+            <CompletedTaskCard
+              key={task.id}
+              taskProp={task}
+              incompleteTask={this.incompleteTask}
+              {...this.props}
+            />
+          ))}
+        </div>
+      );
+    }
   };
 
   componentDidMount() {
@@ -81,9 +92,6 @@ class TaskList extends Component {
   }
 
   render() {
-    let sortedTasks = this.state.incompleteTasks.sort((a, b) =>
-      a.dueDate > b.dueDate ? 1 : -1
-    );
     let sortedCompleteTasks = this.state.completeTasks.sort((a, b) =>
       a.dueDate > b.dueDate ? 1 : -1
     );
@@ -93,46 +101,23 @@ class TaskList extends Component {
         <section className="section-content">
           <h1 className="task-header-large">Tasks</h1>
           <ul>
-            <li>Click "Add Task" to create a new task</li>
-            <li>Click "View Completed" to view your list of Completed tasks</li>
-            <li>Click on a task name to edit that task</li>
-            <li>Click "Complete" to add a task to your Completed list</li>
+            <li>Click "Incomplete" to add a task back to your list</li>
           </ul>
           <button
             type="button"
             disabled={this.loadingStatus}
             className="task-btn main-task-btn"
             onClick={() => {
-              this.props.history.push("/tasks/new");
+              this.props.history.push("/tasks");
             }}
           >
-            Add Task
+            Return to Incomplete Tasks
           </button>
-          <br />
-          <button
-            type="button"
-            disabled={this.loadingStatus}
-            className="task-btn main-task-btn"
-            onClick={() => {
-              this.props.history.push("/tasks/completed");
-            }}
-          >
-            View Completed
-          </button>
-          <h2 className="task-header-large">Incomplete Tasks</h2>
+          <h2 className="task-header-large">Completed Tasks</h2>
           <h4 className="task-header-small">
-            {this.averageIncomplete().toFixed(2)}% Incomplete
+            {this.averageComplete().toFixed(2)}% Completed
           </h4>
-          <div className="task-container-cards">
-            {sortedTasks.map((task) => (
-              <TaskCard
-                key={task.id}
-                taskProp={task}
-                completeTask={this.completeTask}
-                {...this.props}
-              />
-            ))}
-          </div>
+          {this.completeCheck(sortedCompleteTasks)}
         </section>
       </>
     );
