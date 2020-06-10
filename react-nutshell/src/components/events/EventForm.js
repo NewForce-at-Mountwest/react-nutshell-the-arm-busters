@@ -3,12 +3,13 @@ import EventManager from "../../modules/EventManager";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button"
 import { Link } from "react-router-dom"
+import DatePicker from "react-datepicker"
 
 // loading status disable the button don't let them click it a million times
 class EventForm extends Component {
   state = {
     name: "",
-    date: "",
+    date: new Date (),
     location: "",
     loadingStatus: false,
   };
@@ -29,7 +30,7 @@ class EventForm extends Component {
       // matches what is in the database
       const eventObject = {
         name: this.state.name,
-        date: this.state.date,
+        date: new Date (this.state.date),
         location: this.state.location,
       };
 
@@ -60,12 +61,12 @@ class EventForm extends Component {
             placeholder="Location"
           />
           <Form.Label htmlFor="date">Date of Event</Form.Label>
-          <Form.Control
-            type="text"
-            required
-            onChange={this.handleFieldChange}
-            id="date"
-            placeholder="Date"
+          <DatePicker
+            selected={this.state.date}
+            onSelect={this.handleSelect} //when day is clicked
+            onChange={this.handleChange}
+            showTimeSelect
+            dateFormat="Pp" //only when value has changed
           />
           <div className="alignRight">
             <Button

@@ -2,12 +2,13 @@ import React, { Component } from "react";
 import EventManager from "../../modules/EventManager";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import DatePicker from "react-datepicker"
 
 class EventEditForm extends Component {
   //set the initial state
   state = {
     name: "",
-    date: "",
+    date: new Date(),
     location: "",
     loadingStatus: true,
   };
@@ -18,19 +19,24 @@ class EventEditForm extends Component {
     this.setState(stateToChange);
   };
 
-  updateExistingEvent = (evt) => {
+  updateExistingEvent = (evt, date) => {
     evt.preventDefault();
     this.setState({ loadingStatus: true });
     const editedEvent = {
       id: this.props.match.params.eventId,
       name: this.state.name,
-      date: this.state.date,
+      date: date,
       location: this.state.location,
     };
     EventManager.updateEvent(editedEvent).then(() =>
       this.props.history.push("/events")
     );
   };
+  // handleChange = date => {
+  //   this.setState({
+  //     date: date
+  //   });
+  // };
 
   // taco = {}
 
@@ -40,7 +46,7 @@ class EventEditForm extends Component {
       // this.taco.available = book.available
       this.setState({
         name: event.name,
-        date: event.date,
+        date: new Date(event.date),
         location: event.location,
         loadingStatus: false,
       });
@@ -67,12 +73,12 @@ class EventEditForm extends Component {
             value={this.state.location}
           />
           <Form.Label>Date</Form.Label>
-          <Form.Control
-            type="text"
-            required
-            onChange={this.handleFieldChange}
-            id="date"
-            value={this.state.date}
+          <DatePicker
+            selected={this.state.date}
+            onSelect={this.handleSelect} //when day is clicked
+            onChange={this.handleChange}
+            showTimeSelect
+            dateFormat="Pp" //only when value has changed
           />
           <Button
           variant="danger"

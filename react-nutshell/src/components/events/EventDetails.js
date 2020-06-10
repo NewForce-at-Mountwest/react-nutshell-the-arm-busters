@@ -29,12 +29,12 @@ class EventDetails extends Component {
       this.props.history.push("/events")
     );
   };
-//   handleArchive = () => {
-//     this.setState({ loadingStatus: true });
-//     EventManager.archiveEvent(this.props.eventId).then(() =>
-//       this.props.history.push("/events")
-//     );
-//   };
+  //   handleArchive = () => {
+  //     this.setState({ loadingStatus: true });
+  //     EventManager.archiveEvent(this.props.eventId).then(() =>
+  //       this.props.history.push("/events")
+  //     );
+  //   };
 
   render() {
     return this.isEventId() ? (
@@ -44,9 +44,9 @@ class EventDetails extends Component {
           <Card.Subtitle className="mb-2 text-muted">
             {this.state.location}
           </Card.Subtitle>
-          moment().format('MMMM Do YYYY, h:mm a')
+          <Card.Text>{this.state.date}</Card.Text>
           <Button
-          variant="danger"
+            variant="danger"
             type="button"
             disabled={this.state.loadingStatus}
             onClick={this.handleDelete}
@@ -62,7 +62,7 @@ class EventDetails extends Component {
             Archive
           </Button> */}
           <Button
-          variant="danger"
+            variant="danger"
             type="button"
             onClick={() => {
               this.props.history.push(`/events/${this.props.eventId}/edit`);
