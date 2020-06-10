@@ -8,6 +8,7 @@ import EventEditForm from './events/EventEditForm'
 import TaskList from "./tasks/TaskList.js"
 import TaskForm from "./tasks/TaskForm.js"
 import TaskEditForm from "./tasks/TaskEditForm.js"
+import CompletedTaskList from "./tasks/CompletedTaskList.js"
 
 class ApplicationViews extends Component {
   isAuthenticated = () => localStorage.getItem("credentials") !== null;
@@ -74,6 +75,13 @@ class ApplicationViews extends Component {
           path="/tasks/new"
           render={(props) => {
             return <TaskForm {...props}/>;
+          }}
+        />
+        <Route
+          exact
+          path="/tasks/completed"
+          render={(props) => {
+            return <CompletedTaskList {...props}/>;
           }}
         />
         <Route

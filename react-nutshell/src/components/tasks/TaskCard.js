@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./TaskCard.css";
 import { Link } from "react-router-dom";
-import TaskManager from "../../modules/TaskManager.js";
 
 class TaskCard extends Component {
     render() {
@@ -12,7 +11,7 @@ class TaskCard extends Component {
     let overdueHTML = "";
 
     if (today.getTime() > dueDate.getTime()){
-      overdueString = "OVERDUE";
+      overdueString = (<h5 className="task-link">OVERDUE</h5>);
       overdueHTML = "task-overdue"
     }
 
