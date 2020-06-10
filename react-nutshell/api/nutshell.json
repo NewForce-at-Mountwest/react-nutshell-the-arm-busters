@@ -83,20 +83,16 @@
       "id": 8
     },
     {
-      "title": "Third Article",
-      "synopsis": "This is the third article",
-      "url": "secondarticle.com",
-      "userId": 1,
-      "date": "2020-06-10T15:42:30.378Z",
-      "id": 9
+      "id": 9,
+      "title": "Third Article - Edit",
+      "url": "thirdarticle.com",
+      "synopsis": "This is the third article"
     },
     {
-      "title": "Fourth Article",
-      "synopsis": "This is the 4th article",
+      "id": 10,
+      "title": "Fourth Article - Edited",
       "url": "4thArticle.com",
-      "userId": 1,
-      "date": "2020-06-10T15:44:48.178Z",
-      "id": 10
+      "synopsis": "This is the 4th article"
     }
   ],
   "chats": {

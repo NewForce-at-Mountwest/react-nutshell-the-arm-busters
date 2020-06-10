@@ -4,6 +4,7 @@ import Home from "./home/Home.js";
 import NewsList from "./news/NewsList.js";
 import NewsForm from "./news/NewsForm.js"
 import NewsCard from "./news/NewsCard.js";
+import NewsEditForm from "./news/NewsEditForm"
 
 class ApplicationViews extends Component {
   isAuthenticated = () => localStorage.getItem("credentials") !== null;
@@ -22,7 +23,7 @@ class ApplicationViews extends Component {
           exact
           path="/news"
           render={(props) => {
-            return <NewsList {... props} />;
+            return <NewsList {...props} />;
           }}
         />
         <Route
@@ -38,6 +39,12 @@ class ApplicationViews extends Component {
             return (
               <NewsCard animalId={props.match.params.newsId} {...props} />
             );
+          }}
+        />
+        <Route
+          path="/news/:newsId(\d+)/edit" 
+          render={props => {
+            return <NewsEditForm {...props} />
           }}
         />
       </React.Fragment>

@@ -25,7 +25,7 @@ class NewsCard extends Component {
             Delete
           </button>
           <button type="button"
-        onClick={() => {this.props.history.push(`/news/${this.props.newsId}/edit`)}}>Edit</button>
+        onClick={() => {this.props.history.push(`/news/${this.props.newsProp.id}/edit`)}}>Edit</button>
         </div>
       </div>
     );

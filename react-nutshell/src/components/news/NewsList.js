@@ -60,7 +60,7 @@ render(){
   </section>
         <div className="container-cards">
             {/* <h1>I have a monkey named {this.monkies.name}</h1> */}
-            {this.state.newsArticles.sort((a,b)=>{return new Date(b.date)- new Date(a.date) }).map(newsInLoop => <NewsCard key={newsInLoop.id} newsProp={newsInLoop} deleteNewsArticle={this.deleteNewsArticle}/>)}
+            {this.state.newsArticles.sort((a,b)=>{return new Date(b.date)- new Date(a.date) }).map(newsInLoop => <NewsCard key={newsInLoop.id} newsProp={newsInLoop} deleteNewsArticle={this.deleteNewsArticle} {...this.props}/>)}
         </div>
         </>
     )
