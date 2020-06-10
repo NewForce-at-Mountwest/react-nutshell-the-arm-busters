@@ -6,9 +6,13 @@
     border: 0 none;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     border-radius: 5px;
-    background: peachpuff;
+    background: #fbe9eb;
 }
 
 .task-link{
     color: #DC3545;
+}
+
+.task-overdue{
+    background-color: #f7d4d7;
 }

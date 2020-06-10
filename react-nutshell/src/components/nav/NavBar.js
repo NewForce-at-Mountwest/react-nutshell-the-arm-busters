@@ -9,7 +9,7 @@ class NavBar extends Component {
     return (
       <header>
         <Navbar bg="danger" variant="dark">
-          <Navbar.Brand href="#home">Nutshell</Navbar.Brand>
+          <Navbar.Brand href="/">Nutshell</Navbar.Brand>
           <Nav className="mr-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/news">News</Nav.Link>

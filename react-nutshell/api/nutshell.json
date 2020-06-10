@@ -47,6 +47,13 @@
       "dueDate": "2020-06-08T18:46:36.000Z",
       "completed": false,
       "id": 4
+    },
+    {
+      "userId": 3,
+      "task": "asdasdasdasd",
+      "dueDate": "2020-06-13T19:31:13.000Z",
+      "completed": true,
+      "id": 5
     }
   ],
   "events": [
