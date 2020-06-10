@@ -9,6 +9,10 @@ export default {
     return fetch(`${remoteURL}/tasks?completed=false&_expand=user`)
     .then(result => result.json())
   },
+  getAllCompleted() {
+    return fetch(`${remoteURL}/tasks?completed=true&_expand=user`)
+    .then(result => result.json())
+  },
   getAllFromUser(userId) {
     return fetch(`${remoteURL}/tasks?userId=${userId}&_expand=user`)
     .then(result => result.json())

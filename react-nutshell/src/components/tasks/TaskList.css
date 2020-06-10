@@ -24,4 +24,18 @@
 .section-content{
     justify-content: center;
     text-align: center;
+    margin-bottom: 4em;
+}
+
+.section-content ul{
+    list-style: none;
+}
+
+.task-header-large{
+    color: #DC3545;
+    margin: 1em;
+}
+.task-header-small{
+    color: #f7d4d7;
+    margin: 1em
 }
