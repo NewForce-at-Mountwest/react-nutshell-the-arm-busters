@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { Route, withRouter, Redirect } from "react-router-dom";
 import Home from "./home/Home.js";
+import EventList from './events/EventList';
+import EventForm from './events/EventForm';
+import EventDetails from './events/EventDetails';
+import EventEditForm from './events/EventEditForm'
 import TaskList from "./tasks/TaskList.js"
 import TaskForm from "./tasks/TaskForm.js"
 import TaskEditForm from "./tasks/TaskEditForm.js"
@@ -18,6 +22,46 @@ class ApplicationViews extends Component {
             return <Home />;
           }}
         />
+          
+        {/* Events */}
+
+        <Route
+          exact
+          path="/events"
+          render={(props) => {
+            return <EventList {...props}/>;
+          }}
+        />
+
+        <Route
+          exact
+          path="/events/:eventId(\d+)"
+          render={(props) => {
+            return (
+              <EventDetails
+                eventId={parseInt(props.match.params.eventId)}
+                {...props}
+              />
+            );
+          }}
+        />
+
+        <Route
+          path="/events/:eventId(\d+)/edit"
+          render={(props) => {
+            return <EventEditForm {...props} />;
+          }}
+        />
+
+        <Route
+          path="/events/new"
+          render={(props) => {
+            return <EventForm {...props} />;
+          }}
+        />
+
+{/* EVENTS */}
+
         <Route
           exact
           path="/tasks"
