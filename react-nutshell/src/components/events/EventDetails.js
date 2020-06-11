@@ -30,12 +30,7 @@ class EventDetails extends Component {
       this.props.history.push("/events")
     );
   };add
-  parsedEvents.sort((a, b) => {          
-                if (a.date === b.date) {
-                   return parseInt(a.time) - parseInt(b.time);
-                }
-                return a.date > b.date ? 1 : -1;
-             });
+
 
   render() {
     return this.isEventId() ? (
