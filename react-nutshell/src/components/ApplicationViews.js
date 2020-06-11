@@ -5,6 +5,10 @@ import NewsList from "./news/NewsList.js";
 import NewsForm from "./news/NewsForm.js"
 import NewsCard from "./news/NewsCard.js";
 import NewsEditForm from "./news/NewsEditForm"
+import EventList from './events/EventList';
+import EventForm from './events/EventForm';
+import EventDetails from './events/EventDetails';
+import EventEditForm from './events/EventEditForm'
 import TaskList from "./tasks/TaskList.js"
 import TaskForm from "./tasks/TaskForm.js"
 import TaskEditForm from "./tasks/TaskEditForm.js"
@@ -23,6 +27,47 @@ class ApplicationViews extends Component {
             return <Home />;
           }}
         />
+          
+        {/* Events */}
+
+        <Route
+          exact
+          path="/events"
+          render={(props) => {
+            return <EventList {...props}/>;
+          }}
+        />
+
+        <Route
+          exact
+          path="/events/:eventId(\d+)"
+          render={(props) => {
+            return (
+              <EventDetails
+                eventId={parseInt(props.match.params.eventId)}
+                {...props}
+              />
+            );
+          }}
+        />
+
+        <Route
+          path="/events/:eventId(\d+)/edit"
+          render={(props) => {
+            return <EventEditForm {...props} />;
+          }}
+        />
+
+        <Route
+          path="/events/new"
+          render={(props) => {
+            return <EventForm {...props} />;
+          }}
+        />
+
+{/* EVENTS */}
+
+{/* News Routes */}
         <Route
           exact
           path="/news"
@@ -48,6 +93,7 @@ class ApplicationViews extends Component {
             return <NewsEditForm {...props} />;
           }}
         />
+        {/* News Routes */}
         <Route
           exact
           path="/tasks"
