@@ -5,6 +5,10 @@ import NewsList from "./news/NewsList.js";
 import NewsForm from "./news/NewsForm.js"
 import NewsCard from "./news/NewsCard.js";
 import NewsEditForm from "./news/NewsEditForm"
+import TaskList from "./tasks/TaskList.js"
+import TaskForm from "./tasks/TaskForm.js"
+import TaskEditForm from "./tasks/TaskEditForm.js"
+import CompletedTaskList from "./tasks/CompletedTaskList.js"
 
 class ApplicationViews extends Component {
   isAuthenticated = () => localStorage.getItem("credentials") !== null;
@@ -35,16 +39,39 @@ class ApplicationViews extends Component {
         <Route
           exact path="/news/:newsId(\d+)"
           render={(props) => {
-            console.log("this is props from application views", props);
-            return (
-              <NewsCard animalId={props.match.params.newsId} {...props} />
-            );
+            return <NewsCard newsId={props.match.params.newsId} {...props} />;
           }}
         />
         <Route
-          path="/news/:newsId(\d+)/edit" 
-          render={props => {
-            return <NewsEditForm {...props} />
+          path="/news/:newsId(\d+)/edit"
+          render={(props) => {
+            return <NewsEditForm {...props} />;
+          }}
+        />
+        <Route
+          path="/tasks"
+          render={(props) => {
+            return <TaskList {...props} />;
+          }}
+        />
+        <Route
+          exact
+          path="/tasks/new"
+          render={(props) => {
+            return <TaskForm {...props} />;
+          }}
+        />
+        <Route
+          exact
+          path="/tasks/completed"
+          render={(props) => {
+            return <CompletedTaskList {...props} />;
+          }}
+        />
+        <Route
+          path="/tasks/:taskId(\d+)/edit"
+          render={(props) => {
+            return <TaskEditForm {...props} />
           }}
         />
       </React.Fragment>
@@ -52,4 +79,4 @@ class ApplicationViews extends Component {
   }
 }
 
-export default ApplicationViews;
+export default ApplicationViews

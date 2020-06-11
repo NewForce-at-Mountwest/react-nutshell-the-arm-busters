@@ -1,0 +1,41 @@
+.task-container-cards{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.task-btn{
+    background-color: #DC3545;
+    border: none;
+    color: cornsilk;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    padding: 0.5em;
+    border-radius: 4px;
+    margin: 1em;
+    width: 25%;
+    word-wrap: break-word;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.section-content{
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 4em;
+}
+
+.section-content ul{
+    list-style: none;
+}
+
+.task-header-large{
+    color: #DC3545;
+    margin: 1em;
+}
+.task-header-small{
+    color: #f7d4d7;
+    margin: 1em
+}

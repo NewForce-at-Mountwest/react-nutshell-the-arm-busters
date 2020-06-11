@@ -86,13 +86,17 @@
       "id": 9,
       "title": "Third Article - Edit",
       "url": "thirdarticle.com",
-      "synopsis": "This is the third article"
+      "synopsis": "This is the third article",
+      "date": "2020-06-10T15:42:10.616Z",
+      "userId": 1
     },
     {
       "id": 10,
       "title": "Fourth Article - Edited",
       "url": "4thArticle.com",
-      "synopsis": "This is the 4th article"
+      "synopsis": "This is the 4th article",
+      "date": "2020-06-10T15:42:10.616Z",
+      "userId": 1
     }
   ],
   "chats": {
