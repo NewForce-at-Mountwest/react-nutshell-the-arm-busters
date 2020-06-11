@@ -67,20 +67,8 @@ class EventForm extends Component {
             placeholder="Location"
           />
           <Form.Label htmlFor="date">Date of Event</Form.Label>
-          {/* <Form.Control
-          type="datetime-local"
-          required
-          onChange={this.handleFieldChange}
-          id="date"
-          placeholder="Date"
-          /> */}
-          {/* <DatePicker
-            selected={this.state.date}
-            onSelect={this.handleSelect} //when day is clicked
-            onChange={this.handleChange}
-          /> */}
           <DatePicker
-          selected={this.state.time}
+          selected={this.state.date}
           onSelect={this.handleSelect} 
           onChange={this.handleChange}
           showTimeSelect
