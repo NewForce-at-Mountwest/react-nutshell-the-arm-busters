@@ -18,13 +18,10 @@ class EventList extends Component {
   }
 
   render() {
-    this.state.events.sort((a, b) => {          
-      if (a.date === b.date) {
-         return parseInt(a.time) - parseInt(b.time);
-      }
+    this.state.events.sort((a, b) => {          ls
+      
       return a.date > b.date ? 1 : -1;
    });
-    // sortedEvent = (a,b) => this.state.date ? 1 : -1
     return (
       <>
           <Button
