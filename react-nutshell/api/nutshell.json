@@ -66,24 +66,45 @@
   "events": [
     {
       "id": 1,
-      "date": "July 2021",
       "name": "When Fun Begins",
-      "location": "Not America",
-      "userId": 1
+      "date": "2021-07-14T00:00:00.000Z",
+      "location": "Not America"
     },
     {
       "id": 2,
-      "date": "December 2020",
       "name": "Austin Optimism Fun",
-      "location": "Unlikely in Huntington",
-      "userId": 2
+      "date": "2020-12-01",
+      "location": "Unlikely in Huntington"
     },
     {
       "id": 3,
-      "date": "February 2021",
       "name": "Maybe Vaccine Party",
-      "location": "Mountain State Health Arena",
-      "userId": 3
+      "date": "2021-02-16",
+      "location": "Mountain State Health Arena"
+    },
+    {
+      "id": 4,
+      "name": "Get the Rona Party",
+      "date": "2020-06-10",
+      "location": "Applebees"
+    },
+    {
+      "id": 6,
+      "name": "Trump goes away",
+      "date": "2020-11-04T00:00:00.000Z",
+      "location": "America"
+    },
+    {
+      "id": 7,
+      "name": "Sarah Brooks",
+      "date": "2020-06-10T16:00:00.761Z",
+      "location": "Applebees"
+    },
+    {
+      "name": "rona party",
+      "date": "2020-06-10T19:00:00.844Z",
+      "location": "at the local JCP",
+      "id": 8
     }
   ],
   "newsArticles": [
