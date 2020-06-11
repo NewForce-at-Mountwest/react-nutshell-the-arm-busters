@@ -4,18 +4,21 @@
       "id": 1,
       "name": "Sarah Brooks",
       "username": "trisarahtops",
+      "password": "123",
       "email": "sarah@sarah.com"
     },
     {
       "id": 2,
       "name": "Austin Preece",
       "username": "preeceasaurus",
+      "password": "123",
       "email": "austin@austin.com"
     },
     {
       "id": 3,
       "name": "Dylan Bishop",
       "username": "bishiosauraus",
+      "password": "123",
       "email": "dylan@dylan.com"
     },
     {
@@ -31,6 +34,13 @@
       "email": "hankthetank@gmail.com",
       "password": "123",
       "id": 5
+    },
+    {
+      "name": "josh",
+      "username": "joshua",
+      "email": "josh@josh.com",
+      "password": "123",
+      "id": 6
     }
   ],
   "tasks": [
@@ -39,21 +49,42 @@
       "userId": 1,
       "task": "Clean the bathroom",
       "completed": false,
-      "deadline": "today"
+      "dueDate": "2020-06-13T04:00:00.000Z"
     },
     {
       "id": 2,
       "userId": 3,
       "task": "Go to the gym",
       "completed": false,
-      "deadline": "today"
+      "dueDate": "2020-06-13T04:00:00.000Z"
     },
     {
       "id": 3,
       "userId": 2,
       "task": "Walk the dog",
-      "completed": false,
-      "deadline": "today"
+      "dueDate": "2020-06-13T04:00:00.000Z",
+      "completed": false
+    },
+    {
+      "id": 4,
+      "userId": 3,
+      "task": "Start Reactive Nutshell",
+      "dueDate": "2020-06-08T18:46:36.000Z",
+      "completed": false
+    },
+    {
+      "userId": 3,
+      "task": "asdasdasdasd",
+      "dueDate": "2020-06-13T19:31:13.000Z",
+      "completed": true,
+      "id": 5
+    },
+    {
+      "id": 6,
+      "userId": 3,
+      "task": "Watch PS5 Reveal Event",
+      "dueDate": "2020-06-12T17:57:12.000Z",
+      "completed": false
     }
   ],
   "events": [
