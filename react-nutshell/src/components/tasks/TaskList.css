@@ -21,6 +21,22 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
+.task-btn-completed{
+    background-color: #fbe9eb;
+    border: none;
+    color: #DC3545;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    padding: 0.5em;
+    border-radius: 4px;
+    margin: 1em;
+    width: 25%;
+    word-wrap: break-word;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
 .section-content{
     justify-content: center;
     text-align: center;

@@ -6,7 +6,7 @@ export default {
     .then(result => result.json())
   },
   getAll() {
-    return fetch(`${remoteURL}/tasks?completed=false&_expand=user`)
+    return fetch(`${remoteURL}/tasks?_expand=user`)
     .then(result => result.json())
   },
   getAllCompleted() {
