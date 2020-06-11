@@ -29,8 +29,7 @@ class EventDetails extends Component {
     EventManager.deleteEvent(this.props.eventId).then(() =>
       this.props.history.push("/events")
     );
-  };add
-
+  };
 
   render() {
     return this.isEventId() ? (
