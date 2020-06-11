@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { Route, withRouter, Redirect } from "react-router-dom";
 import Home from "./home/Home.js";
+import NewsList from "./news/NewsList.js";
+import NewsForm from "./news/NewsForm.js"
+import NewsCard from "./news/NewsCard.js";
+import NewsEditForm from "./news/NewsEditForm"
 import EventList from './events/EventList';
 import EventForm from './events/EventForm';
 import EventDetails from './events/EventDetails';
@@ -63,25 +67,52 @@ class ApplicationViews extends Component {
 
 {/* EVENTS */}
 
+{/* News Routes */}
+        <Route
+          exact
+          path="/news"
+          render={(props) => {
+            return <NewsList {...props} />;
+          }}
+        />
+        <Route
+          path="/news/new"
+          render={(props) => {
+            return <NewsForm {...props} />;
+          }}
+        />
+        <Route
+          exact path="/news/:newsId(\d+)"
+          render={(props) => {
+            return <NewsCard newsId={props.match.params.newsId} {...props} />;
+          }}
+        />
+        <Route
+          path="/news/:newsId(\d+)/edit"
+          render={(props) => {
+            return <NewsEditForm {...props} />;
+          }}
+        />
+        {/* News Routes */}
         <Route
           exact
           path="/tasks"
           render={(props) => {
-            return <TaskList {...props}/>;
+            return <TaskList {...props} />;
           }}
         />
         <Route
           exact
           path="/tasks/new"
           render={(props) => {
-            return <TaskForm {...props}/>;
+            return <TaskForm {...props} />;
           }}
         />
         <Route
           exact
           path="/tasks/completed"
           render={(props) => {
-            return <CompletedTaskList {...props}/>;
+            return <CompletedTaskList {...props} />;
           }}
         />
         <Route
@@ -95,4 +126,4 @@ class ApplicationViews extends Component {
   }
 }
 
-export default ApplicationViews;
+export default ApplicationViews
