@@ -7,12 +7,27 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     border-radius: 5px;
     background: #fbe9eb;
+    word-wrap: break-word;
+}
+
+.task-card-completed{
+    color: #fbe9eb;
+    margin: 1em;
+    padding: 1em;
+    width: 25vw;
+    text-align: center;
+    border: 0 none;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+    background: #DC3545;
+    word-wrap: break-word;
 }
 
 .task-link{
     color: #DC3545;
+    
 }
 
 .task-overdue{
-    background-color: #f7d4d7;
+    background-color: #f0a8af;
 }

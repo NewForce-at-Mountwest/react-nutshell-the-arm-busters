@@ -15,7 +15,8 @@ class TaskCard extends Component {
       overdueHTML = "task-overdue"
     }
 
-    return (
+    if(this.props.taskProp.completed == false){
+          return (
       <div className={`task-card ${overdueHTML}`}>
         <div className="task-card-content">
           <h3>
@@ -24,17 +25,35 @@ class TaskCard extends Component {
           <p>
             Complete by {dueDateString}
           </p>
-          <p>{overdueString}</p>
+          {overdueString}
           <button
             type="button"
             className="task-btn"
             onClick={() => this.props.completeTask(this.props.taskProp)}
           >
-            Complete
+            Mark as Completed
           </button>
         </div>
       </div>
     );
+          }
+          else{
+            return (
+              <div className="task-card-completed">
+                <div className="task-card-content">
+                  <h3>{this.props.taskProp.task}</h3>
+                  <h5>COMPLETED</h5>
+                  <button
+                    type="button"
+                    className="task-btn-completed"
+                    onClick={() => this.props.incompleteTask(this.props.taskProp)}
+                  >
+                    Mark as Incomplete
+                  </button>
+                </div>
+              </div>
+            );
+          }
   }
 }
 
