@@ -17,6 +17,20 @@
       "name": "Dylan Bishop",
       "username": "bishiosauraus",
       "email": "dylan@dylan.com"
+    },
+    {
+      "name": "Hank",
+      "username": "HanktheTank",
+      "email": "hankthetank@gmail.com",
+      "password": "123",
+      "id": 4
+    },
+    {
+      "name": "Hank",
+      "username": "HanktheTank",
+      "email": "hankthetank@gmail.com",
+      "password": "123",
+      "id": 5
     }
   ],
   "tasks": [
@@ -25,14 +39,14 @@
       "userId": 1,
       "task": "Clean the bathroom",
       "completed": false,
-      "deadline": "today"
+      "dueDate": "2020-06-13T04:00:00.000Z",
     },
     {
       "id": 2,
       "userId": 3,
       "task": "Go to the gym",
       "completed": false,
-      "deadline": "today"
+      "dueDate": "2020-06-13T04:00:00.000Z",
     },
     {
       "id": 3,

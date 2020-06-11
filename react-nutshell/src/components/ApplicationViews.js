@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, withRouter, Redirect } from "react-router-dom";
+import { Route, withRouter, Redirect } from "react-router-dom"
 import Home from "./home/Home.js";
 import NewsList from "./news/NewsList.js";
 import NewsForm from "./news/NewsForm.js"
@@ -12,6 +12,9 @@ import EventEditForm from './events/EventEditForm'
 import TaskList from "./tasks/TaskList.js"
 import TaskForm from "./tasks/TaskForm.js"
 import TaskEditForm from "./tasks/TaskEditForm.js"
+import CompletedTaskList from "./tasks/CompletedTaskList.js"
+import RegisterForm from "./auth/Register.js";
+import Login from './auth/Login'
 
 class ApplicationViews extends Component {
   isAuthenticated = () => localStorage.getItem("credentials") !== null;
@@ -26,14 +29,26 @@ class ApplicationViews extends Component {
             return <Home />;
           }}
         />
-          
+        <Route
+          exact
+          path="/register"
+          render={(props) => {
+            return <RegisterForm {...props} />;
+          }}
+        />
+        <Route path="/login" component={Login} />
+
         {/* Events */}
 
         <Route
           exact
           path="/events"
           render={(props) => {
-            return <EventList {...props}/>;
+            if (this.isAuthenticated()) {
+              return <EventList {...props} />
+            } else {
+              return <Redirect to="/login" />
+             }
           }}
         />
 
@@ -64,9 +79,9 @@ class ApplicationViews extends Component {
           }}
         />
 
-{/* EVENTS */}
+        {/* EVENTS */}
 
-{/* News Routes */}
+        {/* News Routes */}
         <Route
           exact
           path="/news"
