@@ -25,6 +25,8 @@ class NewsEditForm extends Component {
         title: this.state.title,
         url: this.state.url,
         synopsis: this.state.synopsis,
+        date: this.state.date,
+        userId: this.state.userId
       };
 
       NewsManager.update(editedNewsArticle)
@@ -38,7 +40,9 @@ class NewsEditForm extends Component {
             title: news.title,
             url: news.url,
             synopsis: news.synopsis,
-            loadingStatus: false,
+            date: news.date,
+            userId: news.userId,
+            loadingStatus: false
           });
       });
     }
@@ -49,8 +53,9 @@ class NewsEditForm extends Component {
         <form>
           <fieldset>
               
-            <label htmlFor="title">Title</label>
-            <div className="formgrid">
+           
+            <div >
+              <label htmlFor="title">Title</label>
               <input
                 type="text"
                 required
@@ -60,7 +65,7 @@ class NewsEditForm extends Component {
                 value={this.state.title}
               />
               
-<label htmlFor="url">URL</label> 
+            <label htmlFor="url">URL</label> 
               <input
                 type="text"
                 required

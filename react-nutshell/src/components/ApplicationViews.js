@@ -49,6 +49,7 @@ class ApplicationViews extends Component {
           }}
         />
         <Route
+          exact
           path="/tasks"
           render={(props) => {
             return <TaskList {...props} />;
