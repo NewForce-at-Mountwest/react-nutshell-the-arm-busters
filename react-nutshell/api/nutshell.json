@@ -17,6 +17,20 @@
       "name": "Dylan Bishop",
       "username": "bishiosauraus",
       "email": "dylan@dylan.com"
+    },
+    {
+      "name": "Hank",
+      "username": "HanktheTank",
+      "email": "hankthetank@gmail.com",
+      "password": "123",
+      "id": 4
+    },
+    {
+      "name": "Hank",
+      "username": "HanktheTank",
+      "email": "hankthetank@gmail.com",
+      "password": "123",
+      "id": 5
     }
   ],
   "tasks": [
