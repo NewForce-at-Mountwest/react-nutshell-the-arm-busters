@@ -4,18 +4,21 @@
       "id": 1,
       "name": "Sarah Brooks",
       "username": "trisarahtops",
+      "password": "123",
       "email": "sarah@sarah.com"
     },
     {
       "id": 2,
       "name": "Austin Preece",
       "username": "preeceasaurus",
+      "password": "123",
       "email": "austin@austin.com"
     },
     {
       "id": 3,
       "name": "Dylan Bishop",
       "username": "bishiosauraus",
+      "password": "123",
       "email": "dylan@dylan.com"
     },
     {
@@ -31,6 +34,13 @@
       "email": "hankthetank@gmail.com",
       "password": "123",
       "id": 5
+    },
+    {
+      "name": "josh",
+      "username": "joshua",
+      "email": "josh@josh.com",
+      "password": "123",
+      "id": 6
     }
   ],
   "tasks": [
@@ -39,14 +49,14 @@
       "userId": 1,
       "task": "Clean the bathroom",
       "completed": false,
-      "dueDate": "2020-06-13T04:00:00.000Z",
+      "dueDate": "2020-06-13T04:00:00.000Z"
     },
     {
       "id": 2,
       "userId": 3,
       "task": "Go to the gym",
       "completed": false,
-      "dueDate": "2020-06-13T04:00:00.000Z",
+      "dueDate": "2020-06-13T04:00:00.000Z"
     },
     {
       "id": 3,
