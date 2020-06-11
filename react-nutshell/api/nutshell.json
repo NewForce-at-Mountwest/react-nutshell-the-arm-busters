@@ -24,15 +24,15 @@
       "id": 1,
       "userId": 1,
       "task": "Clean the bathroom",
-      "dueDate": "2020-06-10T04:00:00.000Z",
-      "completed": false
+      "completed": false,
+      "deadline": "today"
     },
     {
       "id": 2,
       "userId": 3,
       "task": "Go to the gym",
-      "dueDate": "2020-06-09T04:00:00.000Z",
-      "completed": false
+      "completed": false,
+      "deadline": "today"
     },
     {
       "id": 3,
@@ -109,28 +109,28 @@
   ],
   "newsArticles": [
     {
-      "id": 1,
+      "title": "First Article",
+      "synopsis": "This is the First Article",
+      "url": "firstarticle.com",
       "userId": 1,
-      "url": "donaldtrumplost.com",
-      "title": "IS AMERICA SAFE",
-      "synopsis": "PROBABLY NOT",
-      "timeStamp": "November 4, 2020"
+      "date": "2020-06-10T14:44:20.761Z",
+      "id": 7
     },
     {
-      "id": 2,
-      "userId": 2,
-      "url": "austinbelievesinamerica.com",
-      "title": "WILL THE YOUTH SAVE US",
-      "synopsis": "DOUBT IT",
-      "timeStamp": "July 1, 2020"
+      "title": "Second Article",
+      "synopsis": "This is the second article I made",
+      "url": "secondarticle.com",
+      "userId": 1,
+      "date": "2020-06-10T15:42:10.616Z",
+      "id": 8
     },
     {
-      "id": 3,
-      "userId": 3,
-      "url": "chinaisthedevil.com",
-      "title": "ARE THE CHINESE VACCINES SAFE",
-      "synopsis": "OR IS THIS CHEMICAL WARFARE?",
-      "timeStamp": "December 1, 2020"
+      "title": "Third Article",
+      "synopsis": "This is the third article",
+      "url": "thirdarticle.com",
+      "userId": 1,
+      "date": "2020-06-11T14:43:16.223Z",
+      "id": 9
     }
   ],
   "chats": {

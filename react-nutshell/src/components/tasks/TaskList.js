@@ -53,7 +53,11 @@ class TaskList extends Component {
   averageComplete = () => {
     let numberComplete = this.state.completeTasks.length;
     let numberTotal = this.state.allTasks.length;
-    return (numberComplete / numberTotal) * 100;
+    if (numberTotal != 0) {
+      return (numberComplete / numberTotal) * 100;
+    } else {
+      return 100;
+    }
   };
 
   componentDidMount() {
