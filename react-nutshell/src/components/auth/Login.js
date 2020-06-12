@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import RegisterManager from "../../modules/RegisterManager";
+import "../home/Home.css";
 
 class Login extends Component {
   // Set initial state
@@ -7,6 +8,7 @@ class Login extends Component {
     email: "",
     password: "",
     users: "",
+    loadingStatus: true,
   };
 
   // Update state whenever an input field is edited
@@ -34,14 +36,11 @@ class Login extends Component {
         }
       }
     );
-    if ((login == true)) {
-      localStorage.setItem(
-        "userId",
-        loginUserId
-      );
+    if (login == true) {
+      localStorage.setItem("userId", loginUserId);
       this.props.history.push("/");
-    } else{
-      window.alert("Your email and password combination was not recognized!")
+    } else {
+      window.alert("Your email and password combination was not recognized!");
     }
   };
 
@@ -50,6 +49,7 @@ class Login extends Component {
     RegisterManager.getAll().then((users) => {
       this.setState({
         users: users,
+        loadingStatus: false,
       });
       console.log(this.state.users);
     });
@@ -57,10 +57,11 @@ class Login extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleLogin}>
+      <form className="home-form" onSubmit={this.handleLogin}>
         <fieldset>
-          <h3>Please sign in</h3>
-          <div className="formgrid">
+          <h3 className="home-header-large">Please sign in</h3>
+          <div className="home-form">
+          <label htmlFor="inputEmail">Email address</label>
             <input
               onChange={this.handleFieldChange}
               type="email"
@@ -69,8 +70,8 @@ class Login extends Component {
               required=""
               autoFocus=""
             />
-            <label htmlFor="inputEmail">Email address</label>
-
+            <br />
+            <label htmlFor="inputPassword">Password</label>
             <input
               onChange={this.handleFieldChange}
               type="password"
@@ -78,15 +79,24 @@ class Login extends Component {
               placeholder="Password"
               required=""
             />
-            <label htmlFor="inputPassword">Password</label>
           </div>
-          <button type="submit">Sign in</button>
           <button
-                    type="button"
-                    onClick={() => {this.props.history.push("/register")}}
-                  >
-                    Register instead
-                  </button>
+            className="home-btn"
+            disabled={this.state.loadingStatus}
+            type="submit"
+          >
+            Sign in
+          </button>
+          <button
+            className="home-btn"
+            disabled={this.state.loadingStatus}
+            type="button"
+            onClick={() => {
+              this.props.history.push("/register");
+            }}
+          >
+            Register instead
+          </button>
         </fieldset>
       </form>
     );
