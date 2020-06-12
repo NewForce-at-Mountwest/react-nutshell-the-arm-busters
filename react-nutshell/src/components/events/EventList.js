@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import EventCard from "./EventCard";
 import EventManager from "../../modules/EventManager";
 import Button from "react-bootstrap/Button"
+import "./EventList.css";
 
 class EventList extends Component {
   state = {
@@ -40,6 +41,7 @@ class EventList extends Component {
 
     return (
       <>
+      
           <Button
           variant="outline-dark"
             type="button"
@@ -50,6 +52,8 @@ class EventList extends Component {
           >
             Add Event
           </Button>
+          <div class="cards">
+          
           {this.state.events.map((currentEventInLoop) => {
             return (
               <EventCard
@@ -57,8 +61,12 @@ class EventList extends Component {
                 key={currentEventInLoop.id}
                 eventProp={currentEventInLoop}
               />
+            
             );
+            
           })}
+            </div>
+          
       </>
     );
   }
