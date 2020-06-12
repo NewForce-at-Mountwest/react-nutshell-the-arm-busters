@@ -1,20 +1,12 @@
 const remoteURL = "http://localhost:8088"
 
 export default {
-  get(id) {
-    return fetch(`${remoteURL}/tasks/${id}/?_expand=user`)
-    .then(result => result.json())
-  },
-  getAll() {
-    return fetch(`${remoteURL}/tasks?_expand=user`)
-    .then(result => result.json())
-  },
-  getAllCompleted() {
-    return fetch(`${remoteURL}/tasks?completed=true&_expand=user`)
-    .then(result => result.json())
-  },
-  getAllFromUser(userId) {
+  getAll(userId) {
     return fetch(`${remoteURL}/tasks?userId=${userId}&_expand=user`)
+    .then(result => result.json())
+  },
+  getAllCompleted(userId) {
+    return fetch(`${remoteURL}/tasks?userId=${userId}&completed=true&_expand=user`)
     .then(result => result.json())
   },
   delete(id) {

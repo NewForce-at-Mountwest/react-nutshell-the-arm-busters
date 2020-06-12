@@ -6,6 +6,7 @@ import TaskManager from "../../modules/TaskManager.js";
 
 class TaskList extends Component {
   //define what this component needs to render
+
   state = {
     allTasks: [],
     completeTasks: [],
@@ -16,12 +17,12 @@ class TaskList extends Component {
     this.setState({ loadingStatus: true });
 
     TaskManager.patchComplete(taskProp).then(() => {
-      TaskManager.getAll().then((tasks) => {
+      TaskManager.getAll(localStorage.getItem("userId")).then((tasks) => {
         this.setState({
           allTasks: tasks,
           loadingStatus: false,
         });
-        TaskManager.getAllCompleted().then((tasks) => {
+        TaskManager.getAllCompleted(localStorage.getItem("userId")).then((tasks) => {
           this.setState({
             completeTasks: tasks,
             loadingStatus: false,
@@ -35,12 +36,12 @@ class TaskList extends Component {
     this.setState({ loadingStatus: true });
 
     TaskManager.patchIncomplete(taskProp).then(() => {
-      TaskManager.getAll().then((tasks) => {
+      TaskManager.getAll(localStorage.getItem("userId")).then((tasks) => {
         this.setState({
           allTasks: tasks,
           loadingStatus: false,
         });
-        TaskManager.getAllCompleted().then((tasks) => {
+        TaskManager.getAllCompleted(localStorage.getItem("userId")).then((tasks) => {
           this.setState({
             completeTasks: tasks,
             loadingStatus: false,
@@ -54,19 +55,19 @@ class TaskList extends Component {
     let numberComplete = this.state.completeTasks.length;
     let numberTotal = this.state.allTasks.length;
     if (numberTotal != 0) {
-      return (numberComplete / numberTotal) * 100;
+      return `${(numberComplete / numberTotal) * 100}% Completed`;
     } else {
-      return 100;
+      return `No tasks found!`;
     }
   };
 
   componentDidMount() {
     //getAll from TaskManager and hang on to that data; put it in state
-    TaskManager.getAll().then((tasks) => {
+    TaskManager.getAll(localStorage.getItem("userId")).then((tasks) => {
       this.setState({
         allTasks: tasks,
       });
-      TaskManager.getAllCompleted().then((tasks) => {
+      TaskManager.getAllCompleted(localStorage.getItem("userId")).then((tasks) => {
         this.setState({
           completeTasks: tasks,
           loadingStatus: false,
@@ -106,7 +107,7 @@ class TaskList extends Component {
           <br />
           <h2 className="task-header-large">Incomplete Tasks</h2>
           <h4 className="task-header-small">
-            {this.averageComplete().toFixed(2)}% Completed
+            {this.averageComplete()}
           </h4>
           <div className="task-container-cards">
             {sortedTasks.map((task) => (
